@@ -26,6 +26,11 @@
             color: #483D8B;
         }
 
+        .moz-checker-body .domain {
+            font-size: 20px;
+            margin-bottom: 25px;
+        }
+
         .moz-checker-body .jumbotron {
             background: #483D8B !important;
             border-radius: 0px;
@@ -165,6 +170,7 @@
     </div>
 
     <div class="row moz-report" style="display: none;">
+        <h2 class="domain">Domain: <span id="uu"></span></h2>
         <div class="row">
             <div class="col-lg-6">
                 <div class="panel panel-primary">
@@ -210,6 +216,7 @@
                     url: 'moz.php',
                     data: {url: url},
                     success: function (response) {
+                        console.log(response);
                         if (response == 1) {
                             $('#message').html('' +
                                 '<div class="alert alert-danger alert-dismissible fade in text-uppercase text-center" role="alert"> ' +
@@ -228,6 +235,7 @@
                         }
                         else {
                             response = jQuery.parseJSON(response);
+                            $('#uu').html(response.uu);
                             $('#upa').html(response.upa + '/100');
                             $('#pda').html(response.pda + '/100');
                             $('#umrp').html(response.umrp + '/10');

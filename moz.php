@@ -23,6 +23,7 @@ if (isset($_POST['url'])) {
         curl_close($ch);
 
         $overview = array(
+            'uu' => str_replace('/', '', $content->uu),
             'upa' => number_format($content->upa, 2),
             'pda' => number_format($content->pda, 2),
             'umrp' => number_format($content->umrp, 2),
