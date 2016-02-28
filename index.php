@@ -220,7 +220,7 @@
                                 '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>' +
                                 '</button>Sorry, something went wrong ' +
                                 '</div>'
-                            );
+                            ).fadeIn();
                         }
                         else if(response == 2)
                         {
@@ -229,7 +229,7 @@
                                 '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>' +
                                 '</button>Please provide the valid domain ' +
                                 '</div>'
-                            );
+                            ).fadeIn();
                         }
                         else{
                             response = jQuery.parseJSON(response);
