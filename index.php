@@ -34,7 +34,6 @@
         .moz-checker-body .jumbotron {
             background: #483D8B !important;
             border-radius: 0px;
-            padding: 100px;
         }
 
         .moz-checker-body .header,
@@ -110,6 +109,10 @@
         @media (min-width: 768px) {
             .moz-checker-body .container {
                 max-width: 730px;
+            }
+
+            .moz-checker-body .jumbotron {
+                padding: 100px;
             }
         }
 
