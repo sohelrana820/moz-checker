@@ -241,6 +241,12 @@
                             $('#umrp').html(response.umrp + '/10');
                             $('#uid').html(response.uid);
                             $('.moz-report').fadeIn();
+                            $('#message').html('' +
+                                '<div class="alert alert-success alert-dismissible fade in text-uppercase text-center" role="alert"> ' +
+                                '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>' +
+                                '</button>Moz report has been generated for ' + response.uu +
+                                '</div>'
+                            ).fadeIn();
                         }
                     }
                 });
