@@ -152,7 +152,7 @@
 <body class="moz-checker-body">
 <div class="container">
     <div class="header clearfix">
-        <h2 class="title">Check your SEO MOZ</h2>
+        <h2 class="title">SEO Moz Checker</h2>
     </div>
 
     <div id="message"></div>
@@ -194,7 +194,7 @@
         </div>
     </div>
     <footer class="footer">
-        <p>&copy; 2016 Company, Inc.</p>
+        <p>&copy; 2016 Moz Checker.</p>
     </footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
