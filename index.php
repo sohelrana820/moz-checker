@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>SEO Moz Checker</title>
 
-    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,300,700' rel='stylesheet'
-          type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,300,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -219,7 +218,6 @@
                     url: 'moz.php',
                     data: {url: url},
                     success: function (response) {
-                        console.log(response);
                         if (response == 1) {
                             $('#message').html('' +
                                 '<div class="alert alert-danger alert-dismissible fade in text-uppercase text-center" role="alert"> ' +
@@ -251,6 +249,15 @@
                                 '</div>'
                             ).fadeIn();
                         }
+                    },
+                    error: function(data)
+                    {
+                        $('#message').html('' +
+                            '<div class="alert alert-danger alert-dismissible fade in text-uppercase text-center" role="alert"> ' +
+                            '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>' +
+                            '</button>Sorry, something went wrong ' +
+                            '</div>'
+                        ).fadeIn();
                     }
                 });
             });
