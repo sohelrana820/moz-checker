@@ -3,6 +3,8 @@
 define('MOZ_API', 'mozscape-423d5002dc');
 define('MOZ_SECRET_KEY', '2b48bb9d2bd43e5f38766cc937b564d1');
 
+
+
 if (isset($_POST['url'])) {
     // Checking the given url is valid or not
     if (!filter_var($_POST['url'], FILTER_VALIDATE_URL) === false) {
@@ -15,6 +17,8 @@ if (isset($_POST['url'])) {
         $urlSafeSignature = urlencode(base64_encode($binarySignature));
         $cols = "103079233572";
         $limit = 1;
+        insertUrl($domain);
+
 
         $urlMetrics = "http://lsapi.seomoz.com/linkscape/url-metrics/" . $domain . "?Cols=" . $cols . "&Limit=" . $limit . "&AccessID=" . MOZ_API . "&Expires=" . $expires . "&Signature=" . $urlSafeSignature;
         $options = array(
@@ -42,5 +46,26 @@ if (isset($_POST['url'])) {
 }
 else {
     echo json_encode(1);
+}
+
+
+function insertUrl($url)
+{
+    $servername = "localhost";
+    $username = "root";
+    $password = "ltqpsmr7";
+
+    try {
+        $link = new PDO("mysql:host=$servername;dbname=moz-checker", $username, $password);
+        $statement = $link->prepare("INSERT INTO urls (url, created) VALUES(:url, :created)");
+        $statement->execute(array(
+            "url" => $url,
+            "created" => date('Y-m-d H:i:s'),
+        ));
+    }
+    catch(PDOException $e)
+    {
+        //echo false;
+    }
 }
 ?>
